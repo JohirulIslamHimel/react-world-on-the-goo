@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./Country.css";
 
-const Country = ({ country }) => {
+const Country = ({ country, handleVisitedCountries }) => {
   //   console.log(country.name.common);
   const [visited, setVisited] = useState(false);
+  console.log("Country visited");
 
   const handleVisited = () => {
     // console.log("Button Clicked");
@@ -18,6 +19,7 @@ const Country = ({ country }) => {
     // setVisited(visited ? false : true);
     // 3rd system
     setVisited(!visited);
+    handleVisitedCountries(country);
   };
 
   return (
